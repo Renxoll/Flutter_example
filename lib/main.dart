@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
       darkTheme: materialTheme.dark(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: RegisterPage(),
+        body: SafeArea(child: RegisterPage()),
       ),
     );
   }
