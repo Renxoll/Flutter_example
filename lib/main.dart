@@ -1,3 +1,4 @@
+import 'package:example/register_page.dart';
 import 'package:example/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,7 @@ class MainApp extends StatelessWidget {
       darkTheme: materialTheme.dark(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: RegisterPage(),
       ),
     );
   }
