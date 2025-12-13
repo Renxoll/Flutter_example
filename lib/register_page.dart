@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
   @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  bool _isHidden = true;
+  @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
@@ -28,26 +34,36 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
         ),
-              Padding(
+        Padding(
           padding: EdgeInsets.all(8.0),
           child: TextField(
             autocorrect: false,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: "Email"
+              hintText: "Email",
             ),
+            keyboardType: TextInputType.emailAddress,
           ),
         ),
-              Padding(
+        Padding(
           padding: EdgeInsets.all(8.0),
           child: TextField(
             autocorrect: false,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: "Password"
+              hintText: "Password",
+              suffixIcon: IconButton(
+                onPressed:(){
+                  setState(() {
+                    _isHidden = !_isHidden; 
+                  });
+                }, 
+                icon: Icon(_isHidden ? Icons.visibility_off : Icons.visibility),
+              ),
             ),
-          ),
-        )
+            obscureText: _isHidden,
+          ),  
+        ),
       ],
     );
   } 
