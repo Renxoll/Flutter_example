@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
     final MaterialTheme materialTheme = MaterialTheme(TextTheme());
 
     return MaterialApp(
-      theme: materialTheme.light(),
+   //   theme: materialTheme.light(),
       darkTheme: materialTheme.dark(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
