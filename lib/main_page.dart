@@ -1,3 +1,4 @@
+import 'package:example/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -25,7 +26,7 @@ class _MainPageState extends State<MainPage> {
         BottomNavigationBarItem(activeIcon: Icon(Icons.settings), icon: Icon(Icons.settings_outlined), label: "Settings"),
       ],
       ),
-      body: SafeArea(child: Placeholder()),
+      body: SafeArea(child: HomePage()),
     );
   }
 }
