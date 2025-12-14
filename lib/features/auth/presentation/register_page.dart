@@ -1,4 +1,4 @@
-import 'package:example/main_page.dart';
+import 'package:example/features/main/presentation/main_page.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {

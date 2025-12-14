@@ -1,4 +1,4 @@
-import 'package:example/home_page.dart';
+import 'package:example/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -22,7 +22,7 @@ class _MainPageState extends State<MainPage> {
         },
         items: [
         BottomNavigationBarItem(activeIcon: Icon(Icons.home), icon: Icon(Icons.home_outlined), label: "Home"),
-        BottomNavigationBarItem(activeIcon: Icon(Icons.person), icon: Icon(Icons.person_outline), label: "Profile"),
+        BottomNavigationBarItem(activeIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite_border_outlined), label: "Favorites"),
         BottomNavigationBarItem(activeIcon: Icon(Icons.settings), icon: Icon(Icons.settings_outlined), label: "Settings"),
       ],
       ),

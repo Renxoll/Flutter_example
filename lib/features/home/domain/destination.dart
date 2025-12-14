@@ -1,12 +1,20 @@
 class Destination {
-  final int id;
+  final String? explanation;
   final String title;
-  final String posterPath;
+  final String? hdurl;
   
   
   Destination({
-    required this.id,
+    this.explanation,
     required this.title,
-    required this.posterPath,
+    this.hdurl,
   });
+
+  factory Destination.fromJson(Map<String, dynamic> json) {
+    return Destination(
+      explanation: json['explanation'] as String?,
+      title: json['title'] as String,
+      hdurl: json['hdurl'] as String?,
+    );
+  }
 }
