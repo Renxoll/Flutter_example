@@ -1,3 +1,4 @@
+import 'package:example/main_page.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -30,6 +31,12 @@ class _RegisterPageState extends State<RegisterPage> {
             autocorrect: false,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: const Color.fromARGB(255, 33, 243, 100),
+                  width: 2.0,
+                ),
+              ),
               hintText: "Last Name"
             ),
           ),
@@ -63,6 +70,21 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             obscureText: _isHidden,
           ),  
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            width: double.infinity,
+            height: 48,
+            child: FilledButton(
+              onPressed: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => MainPage()),
+                );
+              }, child: Text("Register")
+              ),
+          ),
         ),
       ],
     );
