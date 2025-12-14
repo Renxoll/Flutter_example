@@ -1,3 +1,4 @@
+import 'package:example/login_page.dart';
 import 'package:example/register_page.dart';
 import 'package:example/theme.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
       darkTheme: materialTheme.dark(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: SafeArea(child: RegisterPage()),
+        body: SafeArea(child: LoginPage()),
       ),
     );
   }
