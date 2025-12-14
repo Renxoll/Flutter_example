@@ -1,6 +1,6 @@
-import 'package:example/login_page.dart';
-import 'package:example/register_page.dart';
-import 'package:example/theme.dart';
+import 'package:example/features/auth/presentation/login_page.dart';
+import 'package:example/features/auth/presentation/register_page.dart';
+import 'package:example/core/ui/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
