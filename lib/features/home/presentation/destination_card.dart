@@ -16,14 +16,17 @@ class DestinationCard extends StatelessWidget {
               topLeft: Radius.circular(8), 
               topRight: Radius.circular(8)
               ),
-            child: CachedNetworkImage(
-              imageUrl: destination.url ?? 'Imagen no disponible',
-              height: 120,
-              width: 100,
-              fit: BoxFit.cover,
-              errorWidget: (context, url, error) {
-                return const Icon(Icons.broken_image, size: 64);
-              },
+            child: Hero(
+              tag: destination.title,
+              child: CachedNetworkImage(
+                imageUrl: destination.url ?? 'Imagen no disponible',
+                height: 120,
+                width: 100,
+                fit: BoxFit.cover,
+                errorWidget: (context, url, error) {
+                  return const Icon(Icons.broken_image, size: 64);
+                },
+              ),
             ),
           ),
           Text(destination.title, style: TextStyle(fontWeight: FontWeight.bold)
