@@ -1,6 +1,7 @@
 import 'package:example/features/home/data/destination_service.dart';
 import 'package:example/features/home/domain/destination.dart';
 import 'package:example/features/home/presentation/destination_card.dart';
+import 'package:example/features/home/presentation/destination_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget{
@@ -67,12 +68,28 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
-    return ListView.builder(
-      itemCount: _destinations.length,
-      itemBuilder: (context, index) {
-        Destination destination = _destinations[index];
-        return DestinationCard(destination: destination);
-       },
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: _destinations.length,
+            itemBuilder: (context, index) {
+              Destination destination = _destinations[index];
+              return GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) =>
+                      DestinationDetailPage(destination: destination),
+                      ),
+                  );
+                },
+                child: DestinationCard(destination: destination));
+             },
+          ),
+        ),
+      ],
     );
   }
 }

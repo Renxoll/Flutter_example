@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:example/features/home/domain/destination.dart';
 import 'package:flutter/material.dart';
 
@@ -10,16 +11,23 @@ class DestinationCard extends StatelessWidget {
     return Card(
       child: Row(
         children: [
-          Image.network(
-          destination.url ?? '', 
-          height: 128,
-          width: 128,
-          fit: BoxFit.cover,
-           errorBuilder: (context, error, stackTrace) {
-          return const Icon(Icons.broken_image, size: 64);
-          },
-        ),
-          Text(destination.title),
+          ClipRRect(
+            borderRadius: BorderRadiusGeometry.only(
+              topLeft: Radius.circular(8), 
+              topRight: Radius.circular(8)
+              ),
+            child: CachedNetworkImage(
+              imageUrl: destination.url ?? 'Imagen no disponible',
+              height: 120,
+              width: 100,
+              fit: BoxFit.cover,
+              errorWidget: (context, url, error) {
+                return const Icon(Icons.broken_image, size: 64);
+              },
+            ),
+          ),
+          Text(destination.title, style: TextStyle(fontWeight: FontWeight.bold)
+          ),
         ],
       ),
     );
