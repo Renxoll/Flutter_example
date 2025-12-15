@@ -22,8 +22,8 @@ class _MainPageState extends State<MainPage> {
         },
         items: [
         BottomNavigationBarItem(activeIcon: Icon(Icons.home), icon: Icon(Icons.home_outlined), label: "Home"),
-        BottomNavigationBarItem(activeIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite_border_outlined), label: "Favorites"),
-        BottomNavigationBarItem(activeIcon: Icon(Icons.settings), icon: Icon(Icons.settings_outlined), label: "Settings"),
+        BottomNavigationBarItem(activeIcon: Icon(Icons.show_chart), icon: Icon(Icons.show_chart_outlined), label: "Mostrar"),
+        BottomNavigationBarItem(activeIcon: Icon(Icons.favorite), icon: Icon(Icons.favorite_border_outlined), label: "Favoritos"),
       ],
       ),
       body: SafeArea(child: HomePage()),
