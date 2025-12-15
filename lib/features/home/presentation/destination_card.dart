@@ -12,7 +12,8 @@ class DestinationCard extends StatelessWidget {
         children: [
           Image.network(
           destination.url ?? '', 
-          width: 64,
+          height: 128,
+          width: 128,
           fit: BoxFit.cover,
            errorBuilder: (context, error, stackTrace) {
           return const Icon(Icons.broken_image, size: 64);
