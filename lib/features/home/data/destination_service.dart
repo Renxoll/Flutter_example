@@ -5,7 +5,7 @@ import 'package:example/features/home/domain/destination.dart';
 import 'package:http/http.dart' as http;
 
 class DestinationService {
-  final String _baseUrl = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2017-07-08&end_date=2017-12-10";
+  final String _baseUrl = "https://api.nasa.gov/planetary/apod?api_key=cqsp022dPCefD5wayXEexTzybe3IlxwABIeZANgh&start_date=2017-07-08&end_date=2017-12-10";
   
   Future<List<Destination>> getDestinations() async { 
     final response = await http.get(Uri.parse(_baseUrl));

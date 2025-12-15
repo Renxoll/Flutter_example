@@ -1,5 +1,6 @@
 import 'package:example/features/home/data/destination_service.dart';
 import 'package:example/features/home/domain/destination.dart';
+import 'package:example/features/home/presentation/destination_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget{
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _loadData() async {
     setState(() {
-      _isLoading = true; // Inicia la carga
+      _isLoading = true; 
       _error = null;
     });
 
@@ -33,13 +34,12 @@ class _HomePageState extends State<HomePage> {
         _destinations = destinations;
       });
     } catch (e) {
-      // Captura cualquier excepción que ocurra (p. ej., problemas de red)
       setState(() {
         _error = 'Error al cargar los datos: $e';
       });
     } finally {
       setState(() {
-        _isLoading = false; // Finaliza la carga
+        _isLoading = false; 
       });
     }
   }
@@ -71,11 +71,8 @@ class _HomePageState extends State<HomePage> {
       itemCount: _destinations.length,
       itemBuilder: (context, index) {
         Destination destination = _destinations[index];
-        return ListTile(
-          title: Text(destination.title),
-          subtitle: Text(destination.explanation ?? 'Sin descripción'),
-        );
-      },
+        return DestinationCard(destination: destination);
+       },
     );
   }
 }

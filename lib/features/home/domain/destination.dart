@@ -1,20 +1,20 @@
 class Destination {
   final String? explanation;
   final String title;
-  final String? hdurl;
+  final String? url;
   
   
   Destination({
     this.explanation,
     required this.title,
-    this.hdurl,
+    this.url,
   });
 
   factory Destination.fromJson(Map<String, dynamic> json) {
     return Destination(
       explanation: json['explanation'] as String?,
       title: json['title'] as String,
-      hdurl: json['hdurl'] as String?,
+      url: json['url'] as String?,
     );
   }
 }
